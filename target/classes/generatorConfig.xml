@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- jdbc的jar包 -->
+    <classPathEntry
+        location="D:\Java\jar包\sql-connect/mysql-connector-java-5.1.46.jar" />
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库连接信息 -->
+        <jdbcConnection  driverClass="com.mysql.jdbc.Driver" 
+        	connectionURL="jdbc:mysql://localhost:3306/ssm" 
+        	userId="root" password="123456"/>
+            <!-- 实体类生成路径 -->
+        <javaModelGenerator targetPackage="com.cn.hnust.entity"
+            targetProject="E:\AllProject\workspace3\SSM\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        
+        <!-- 映射xml文件生成路径 -->
+        <sqlMapGenerator targetPackage="com.cn.hnust.mapping"
+            targetProject="E:\AllProject\workspace3\SSM\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!-- 和xml文件关联的dao生成路径（生成文件名默认是***Mapper.java，习惯将其改名成 ***Dao.java） -->
+        <javaClientGenerator targetPackage="com.cn.hnust.dao"
+            targetProject="E:\AllProject\workspace3\SSM\src\main\java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 目标表，如果有多个表就将此段拷贝分别配置 -->
+        <table tableName="user_t" domainObjectName="User"
+            enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false">
+        </table>
+    </context>
+</generatorConfiguration>
