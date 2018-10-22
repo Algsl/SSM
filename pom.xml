@@ -40,7 +40,7 @@
   <!-- 为pom定义常量，方便其他地方引用：如${spring.version} -->
   <properties>
   	<!-- Spring版本号 -->
-  	<spring.version>4.0.2.RELEASE</spring.version>
+  	<spring.version>4.3.18.RELEASE</spring.version>
   	<!-- mybatis版本号 -->
   	<mybatis.version>3.2.6</mybatis.version>
   	<!-- log4j日志文件管理包版本 -->
